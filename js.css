@@ -405,8 +405,8 @@ footer {
 
 #restartButton {
     aspect-ratio: 3;
-    width: 28%;
-    padding: 3%;
+    width: 22%;
+    /* padding: 3%; */
     font-size: clamp(5px, 0.9vw, 20px);
     text-align: center;
     background-color: #919191; 

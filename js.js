@@ -197,7 +197,7 @@ function checkDotCollision() {
     const dotCenterX = posX + radarWidth / 2;
     const dotCenterY = posY + radarHeight / 2;
 
-    const collisionBuffer = 4;
+    const collisionBuffer = 3;
 
     for (let vehicle of vehicles) {
         const vehicleRect = vehicle.element.getBoundingClientRect();
