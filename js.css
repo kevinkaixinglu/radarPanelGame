@@ -331,29 +331,38 @@ footer {
     cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center;    
     padding: 1px;
-    animation: 
-        growShadow 2s linear forwards,        /* Shadow grows for 2 seconds */
-        flashOutline 0.5s linear 1.5s 4; 
+
+    /* Transition for smooth hover effects */
+    transition: background-color 0.1s ease;
+
+    /* Initial shadow color variable */
+    --shadow-color: rgba(255, 0, 0, 0.5);
+
+    animation: growShadow 2s linear forwards, 
+               flashOutline 0.5s linear 1.5s 4;
+}
+
+.bomb:hover {
+    --shadow-color: rgba(71, 218, 117, 0.5);
+    background-color: rgb(71, 218, 117); 
 }
 
 @keyframes growShadow {
     0% {
-        box-shadow: 0 0 5px 2px rgba(255, 0, 0, 0.5);
+        box-shadow: 0 0 5px 2px var(--shadow-color);
     }
     100% {
-        box-shadow: 0 0 20px 10px rgba(255, 0, 0, 1);
+        box-shadow: 0 0 40px 20px var(--shadow-color);
     }
 }
 
 @keyframes flashOutline {
     0%, 50% {
-
         outline: 5px solid transparent;
     }
     25%, 100% {
-
         outline: 5px solid white;
     }
 }

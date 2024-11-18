@@ -355,6 +355,19 @@ function handleKeyDown(e) {
     e.preventDefault();
 }
 
+//Reloading the page to restart the game
+restartButton.onclick = () => {
+    
+    posX = 0;
+    posY = 0;
+    updateDotPosition(); // Update the dot's position
+
+    // Reset the game-over modal visibility
+    gameOverModal.style.display = "none"; 
+    resetGame();
+
+};
+
 //Function to start game from button
 function startGame() {
     // Stop any existing game interval to avoid duplicates
@@ -435,7 +448,6 @@ function addBomb() {
     bomb.style.position = 'absolute';
     bomb.style.width = `${bombDiameter}px`;
     bomb.style.height = `${bombDiameter}px`;
-    bomb.style.backgroundColor = 'red';
     bomb.style.borderRadius = '50%';
     bomb.style.left = `${randomX}px`;
     bomb.style.top = `${randomY}px`;
@@ -443,7 +455,7 @@ function addBomb() {
     radar.appendChild(bomb);
 
     bomb.addEventListener('click', () => {
-        if (gameStarted) {  // Only remove bomb if game is still active
+        if (gameStarted) { 
             radar.removeChild(bomb);
         }
     });
@@ -475,19 +487,6 @@ function showGameOverModal() {
     const gameOverModal = document.getElementById('gameOverModal');
     gameOverModal.style.display = "flex";
 }
-
-//Reloading the page to restart the game
-restartButton.onclick = () => {
-    
-    posX = 0;
-    posY = 0;
-    updateDotPosition(); // Update the dot's position
-
-    // Reset the game-over modal visibility
-    gameOverModal.style.display = "none"; 
-    resetGame();
-
-};
 
 function endGame() {
     // Stop the game loop
@@ -546,6 +545,7 @@ function stopTimer() {
 
 function resetGame() {
     clearInterval(timerInterval);
+    time = 0;
     document.getElementById('timeDisplay').textContent = 0;
 }
 
