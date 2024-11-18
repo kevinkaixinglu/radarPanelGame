@@ -1,0 +1,89 @@
+<!--
+File: js.html
+Author: Kevin Lu
+Created: 11/9/24
+Description: HTML creates the general layout of the radar simulation game.
+A player essentially needs to move a yellow dot on a radar in order to
+dodge however many vehicles they want moving and bouncing around the radar
+screen.
+Dependencies: js1.css, js1.js
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="js.css">
+    <title>Interactive Radar Control Panel Game</title>
+</head>
+<body>
+    <header>
+        <h1><span class="green-text">RADAR</span> CONTROL PANEL GAME</h1>
+    </header>
+    
+    <div class="panel">
+        <div class="left-controls">
+            <button id="addVehicle">ADD VEHICLE</button>
+            <button id="clearVehicles">CLEAR VEHICLES</button>
+        </div>
+        <div id="modalWindow" class="modal">
+            <div class="modal-content">
+                <div class="modal-title">Choose Vehicle</div>   
+                <div class="add-button-container">
+                    <button id="ufoButton">UFO</button>
+                    <button id="rocketButton">Rocket</button>
+                    <button id="planeButton">Plane</button>
+                </div>        
+            </div>
+        </div>
+        <div class="radar">
+            <div class="lines-container">
+                <div class="horizontal-line"></div>
+                <div class="vertical-line"></div>
+                <div class="diagonal-1"></div>
+                <div class="diagonal-2"></div>
+            </div>
+            <div class="big-circle"></div>
+            <div class="small-circle"></div>
+            <div class="player-dot" id="movingDot"></div>
+        </div>
+        <div class="right-controls">
+            <button id="startGameButton">START GAME</button>
+        </div>
+
+        <div id="gameOverModal" class="game-end-modal" style="display: none;">
+            <div class="game-end-modal-content">
+                <p id="gameOver">GAME OVER</p>
+                <p id="scoreText">SCORE:  <span id="finalScore">0</span></p>
+                <button id="restartButton">RESTART</button>
+            </div>
+        </div>
+        
+        <div class="game-state-panel">
+            <p>NUMBER OF VEHICLES: <span id="numVehs">0</span></p>
+            <p>TIME: <span id="timeDisplay">0</span> SECONDS</p>
+        </div>
+        <div id="howToPlayModal" class="how-to-modal">
+            <div class="how-to-modal-content">
+                <p id="gameOver">Start by adding as many vehicles as you want.
+                    Then press the "Start Game" button when ready. Dodge the vehicles by moving 
+                    the yellow dot with your arrow keys. Click on the periodic red bombs before
+                    they explode (2 second timer). Score is calculated by multiplying the number
+                    of vehicles by time alive. Get the highest score possible. Can you beat my high 
+                    score of 1102? Good luck!</p>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    <footer>
+        <button id="howToPlay">How To Play</button>
+    </footer>
+    <script src="js.js"></script>
+</body>
+</html>
