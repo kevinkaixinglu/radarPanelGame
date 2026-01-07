@@ -6,7 +6,6 @@ Description: The css file that provides all the physical aesthetics to the
 website simulation game
 */
 
-
 .green-text {
     color: #346e3b;
 }
@@ -334,12 +333,8 @@ footer {
     justify-content: center;    
     padding: 1px;
 
-    /* Transition for smooth hover effects */
     transition: background-color 0.1s ease;
-
-    /* Initial shadow color variable */
     --shadow-color: rgba(255, 0, 0, 0.5);
-
     animation: growShadow 2s linear forwards, 
                flashOutline 0.5s linear 1.5s 4;
 }
@@ -415,7 +410,6 @@ footer {
 #restartButton {
     aspect-ratio: 3;
     width: 22%;
-    /* padding: 3%; */
     font-size: clamp(5px, 0.9vw, 20px);
     text-align: center;
     background-color: #919191; 
