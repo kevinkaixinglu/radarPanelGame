@@ -1,5 +1,7 @@
 # Radar Run
 
+![Gameplay Demo](./assets/radar-run-gameplay.gif)
+
 **A responsive, browser-based arcade survival game built with vanilla JavaScript.**
 
 ## About
